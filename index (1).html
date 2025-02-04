@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi San Valentín?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffccd5;
+        }
+        h1 {
+            margin-top: 50px;
+            color: #d63384;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .btn {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn-si {
+            background-color: #ff4d6d;
+            color: white;
+        }
+        .btn-no {
+            background-color: #6c757d;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>¿Quieres ser mi San Valentín? 💖</h1>
+    <div class="container">
+        <button class="btn btn-si" onclick="aceptar()">Sí</button>
+        <button class="btn btn-no" onmouseover="moverNo()" onclick="moverNo()">No</button>
+    </div>
+
+    <script>
+        function aceptar() {
+            alert("Te amo demasiado, nos vemos en nuestra cita el 14. Siempre tu ❤️");
+        }
+
+        function moverNo() {
+            let btnNo = document.querySelector(".btn-no");
+            let maxX = window.innerWidth - btnNo.offsetWidth;
+            let maxY = window.innerHeight - btnNo.offsetHeight;
+
+            let randomX = Math.random() * maxX;
+            let randomY = Math.random() * maxY;
+
+            btnNo.style.left = randomX + "px";
+            btnNo.style.top = randomY + "px";
+        }
+    </script>
+
+</body>
+</html>
